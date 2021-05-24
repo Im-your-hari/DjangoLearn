@@ -4,6 +4,6 @@ class products(models.Model):
     name  = models.CharField(max_length=20)
     price = models.IntegerField()
     stock = models.IntegerField()
-    image = models.CharField(max_length=2500)
+    image = models.CharField(max_length=200)
 
 
