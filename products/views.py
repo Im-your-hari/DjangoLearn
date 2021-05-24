@@ -20,11 +20,8 @@ def contact(request):
     return render(request,'contact.html')
 
 def products_details(request,*args):
-    obj = products.objects.get(id=1)
+    obj = products.objects.all()
     prod_db = {
-        "name" : obj.name,
-        "price" : obj.price,
-        "stock" : obj.stock,
-        "image" : obj.image
+        "obj" : obj
     }
     return render(request,'products_details.html',prod_db)

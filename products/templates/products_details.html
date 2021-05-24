@@ -7,9 +7,28 @@
 <hr>
 
 <div>
+    <table border="2" align="center" cellspacing="5px" cellpadding="5px">
+        <tr>
+            <td>NAME</td>
+            <td>PRICE</td>
+            <td>STOCK</td>
+            <td>IMAGE</td>
+        </tr>
+        {% for i in obj %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.price }}</td>
+                <td>{{ i.stock }}</td>
+                <td>{{ i.image }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!--div>
     NAME : {{ name }}<br>
     PRICE : {{ price}}<br>
     STOCK : {{ stock }}<br>
     IMAGE : {{ image }}<br>
-</div>
+</div-->
 {% endblock %}
