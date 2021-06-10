@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import products
+from .models import products,contacts
 
 def home(request):
     print(request.user.is_authenticated)
