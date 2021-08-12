@@ -13,6 +13,7 @@
             <th>PRICE</th>
             <th>STOCK</th>
             <th>IMAGE</th>
+            <th>EDIT</th>
         </tr>
         {% for i in obj %}
             <tr>
@@ -20,6 +21,7 @@
                 <td>{{ i.price }}</td>
                 <td>{{ i.stock }}</td>
                 <td><img src="{{ i.image }}" height="50px" width="50px"></td>
+                <td><input type="submit" value="update"><input type="submit" value="delete"></td>
                 
             </tr>
         {% endfor %}

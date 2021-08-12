@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import products,contacts
+from .forms import ProductForm
 
 def home(request):
     print(request.user.is_authenticated)
@@ -25,3 +26,12 @@ def products_details(request,*args):
         "obj" : obj
     }
     return render(request,'products_details.html',prod_db)
+
+def create(request):
+    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/products')
+    return render(request,'products_create.html',{'form':form})
